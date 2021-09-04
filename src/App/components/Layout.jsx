@@ -1,3 +1,4 @@
+import { Container } from '@material-ui/core';
 import styled from 'styled-components';
 import Footer from './Footer';
 import Header from './Header';
@@ -12,7 +13,7 @@ const Base = styled.div`
 const Layout = ({ children }) => (
   <Base>
     <Header />
-    {children}
+    <Container maxWidth="md">{children}</Container>
     <Footer />
   </Base>
 );
