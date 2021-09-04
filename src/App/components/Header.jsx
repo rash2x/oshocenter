@@ -57,7 +57,7 @@ const Header = () => (
           <ArrowImg src={Arrow} />
         </ListItem>
         <ListItem>
-          <LinkItem href="/">Расписание </LinkItem>
+          <LinkItem href="/schedule">Расписание </LinkItem>
         </ListItem>
         <ListItem>
           <LinkItem href="/subscription">Стоимость </LinkItem>
