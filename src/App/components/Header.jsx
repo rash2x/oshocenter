@@ -60,7 +60,7 @@ const Header = () => (
           <LinkItem href="/">Расписание </LinkItem>
         </ListItem>
         <ListItem>
-          <LinkItem href="/">Стоимость </LinkItem>
+          <LinkItem href="/subscription">Стоимость </LinkItem>
         </ListItem>
         <ListItem>
           <LinkItem href="/">Как добраться? </LinkItem>
