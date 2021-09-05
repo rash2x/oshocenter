@@ -62,6 +62,22 @@ const Address = styled.div`
   font-size: 14px;
   display: flex;
   flex-direction: column;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &:before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      display: block;
+      background: #2196f3;
+      border: none;
+      border-radius: 50%;
+      margin-right: ${props => props.theme.spacing(1)}px;
+    }
+  }
 `;
 
 const Footer = () => (
