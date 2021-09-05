@@ -65,6 +65,9 @@ const Header = () => (
         <ListItem>
           <LinkItem href="/location">Как добраться? </LinkItem>
         </ListItem>
+        <ListItem>
+          <LinkItem href="/about">About </LinkItem>
+        </ListItem>
       </Ul>
     </Nav>
     <Number>

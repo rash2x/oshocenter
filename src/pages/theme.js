@@ -9,6 +9,7 @@ const theme = createTheme({
     type: 'dark',
     background: {
       default: '#0F0529',
+      main: '#290524',
     },
   },
 });

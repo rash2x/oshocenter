@@ -10,10 +10,10 @@ const Base = styled.div`
   height: 100vh;
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, size = 'md' }) => (
   <Base>
     <Header />
-    <Container maxWidth="md">{children}</Container>
+    <Container maxWidth={size}>{children}</Container>
     <Footer />
   </Base>
 );
