@@ -15,7 +15,7 @@ const CardWrapper = styled.div`
   height: 148px;
   padding: ${props => props.theme.spacing(2, 2)};
   text-align: end;
-  margin: 8px;
+  margin: 16px;
 `;
 
 const Header = styled.header`
