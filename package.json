@@ -14,6 +14,7 @@
     "@material-ui/icons": "^5.0.0-alpha.37",
     "@material-ui/lab": "^4.0.0-alpha.58",
     "@material-ui/styles": "^4.11.3",
+    "framer-motion": "^4.1.17",
     "google-map-react": "^2.1.10",
     "next": "11.1.2",
     "react": "17.0.2",
