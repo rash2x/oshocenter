@@ -49,11 +49,13 @@ const Number = styled.div`
 
 const Header = () => (
   <HeaderWrapper>
-    <Logo />
+    <LinkItem href="/">
+      <Logo />
+    </LinkItem>
     <Nav>
       <Ul>
         <ListItem>
-          <LinkItem href="/">О медитациях</LinkItem>
+          <LinkItem href="/about">О медитациях</LinkItem>
           <ArrowImg src={Arrow} />
         </ListItem>
         <ListItem>
@@ -65,9 +67,6 @@ const Header = () => (
         <ListItem>
           <LinkItem href="/location">Как добраться? </LinkItem>
         </ListItem>
-        {/* <ListItem>
-          <LinkItem href="/about">About </LinkItem>
-        </ListItem> */}
       </Ul>
     </Nav>
     <Number>
