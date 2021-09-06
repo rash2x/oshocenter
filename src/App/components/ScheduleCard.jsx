@@ -1,12 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import styled from 'styled-components';
-import Pattern from '../../../public/Pattern.svg';
 
 const Card = styled.div`
   max-width: 282px;
   height: 348px;
-  background: #9fffe0;
+  background: ${props => props.background};
   border-radius: 20px;
   color: black;
   display: flex;
@@ -37,7 +35,7 @@ const Date = styled.div`
   font-style: italic;
   font-weight: bold;
   font-size: 32px;
-  background: #64ffda;
+  background: ${props => props.timeBgr};
   border-radius: 16px;
 `;
 const DateDetails = styled.div`
@@ -62,22 +60,20 @@ const SignUp = styled.button`
   cursor: pointer;
 `;
 
-const ScheduleCard = () => (
-  <Link href="/">
-    <Card>
-      <Main>
-        <CardTitle>Динамическая медитация</CardTitle>
-        <Date>
-          7:00 - 8:00
-          <DateDetails>каждое утро</DateDetails>
-        </Date>
-      </Main>
-      <Footer>
-        <PatternImg src={Pattern} />
-        <SignUp>Записаться</SignUp>
-      </Footer>
-    </Card>
-  </Link>
+const ScheduleCard = ({ title, time, details, img, background, timeBgr }) => (
+  <Card background={background}>
+    <Main>
+      <CardTitle>{title}</CardTitle>
+      <Date timeBgr={timeBgr}>
+        {time}
+        <DateDetails>{details}</DateDetails>
+      </Date>
+    </Main>
+    <Footer>
+      <PatternImg src={img} />
+      <SignUp>Записаться</SignUp>
+    </Footer>
+  </Card>
 );
 
 export default ScheduleCard;

@@ -8,7 +8,6 @@ const Base = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 100vh;
   justify-content: space-evenly;
 `;
 
@@ -82,7 +81,7 @@ const Home = () => (
         <Subtitle>Присутствуй в каждом моменте </Subtitle>
       </Text>
       <PlayButton>
-        <Image src={Play} />
+        <Image src={Play} alt="Play" />
       </PlayButton>
       <SignUpButton>Записаться на пробное занятие</SignUpButton>
     </Base>
