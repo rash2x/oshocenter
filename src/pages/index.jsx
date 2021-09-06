@@ -56,6 +56,7 @@ const PlayButton = styled.button`
   border: none;
   width: 100px;
   height: 100px;
+  margin: 24px 0;
 `;
 const SignUpButton = styled.button`
   background: ${props => props.theme.palette.primary.main};
