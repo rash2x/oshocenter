@@ -46,11 +46,6 @@ const CardText = styled.p`
   font-size: 16px;
 `;
 
-const ReviewsComponent = styled(Reviews)`
-  margin-bottom: 380px;
-  display: none;
-`;
-
 const About = () => (
   <Layout size="lg">
     <Title>
@@ -84,7 +79,7 @@ const About = () => (
         </CardText>
       </InfoCard>
     </Info>
-    <ReviewsComponent />
+    <Reviews />
   </Layout>
 );
 
