@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Vk from '../../../public/vkIcon.svg';
 import Inst from '../../../public/InstIcon.svg';
 import Telegram from '../../../public/TelegamIcon.svg';
@@ -90,19 +91,49 @@ const Footer = () => (
     <Contacts>
       <Socials>
         <IconWrapper>
-          <Link href="/">
-            <Icon src={Vk} />
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 360 }}
+            transition={{ ease: 'easeOut', duration: 0.5 }}
+            whileTap={{
+              scale: 0.8,
+              rotate: -360,
+              borderRadius: '100%',
+            }}
+          >
+            <Link href="/">
+              <Icon src={Vk} />
+            </Link>
+          </motion.div>
         </IconWrapper>
         <IconWrapper>
-          <Link href="/">
-            <Icon src={Inst} />
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 360 }}
+            transition={{ ease: 'easeOut', duration: 0.5 }}
+            whileTap={{
+              scale: 0.8,
+              rotate: -360,
+              borderRadius: '100%',
+            }}
+          >
+            <Link href="/">
+              <Icon src={Inst} />
+            </Link>
+          </motion.div>
         </IconWrapper>
         <IconWrapper>
-          <Link href="/">
-            <Icon src={Telegram} />
-          </Link>
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 360 }}
+            transition={{ ease: 'easeOut', duration: 0.5 }}
+            whileTap={{
+              scale: 0.8,
+              rotate: -360,
+              borderRadius: '100%',
+            }}
+          >
+            <Link href="/">
+              <Icon src={Telegram} />
+            </Link>
+          </motion.div>
         </IconWrapper>
       </Socials>
       <Address>
