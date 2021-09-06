@@ -16,6 +16,17 @@ const theme = createTheme({
     fontFamily: 'Montserrat',
   },
   overrides: {
+    MuiButton: {
+      root: {
+        fontWeight: 600,
+        fontStyle: 'italic',
+        textTransform: 'none'
+      },
+      sizeLarge: {
+        borderRadius: '30px',
+        fontSize: '18px'
+      }
+    },
     MuiMenu: {
       paper: {
         background: '#7C4DFF',

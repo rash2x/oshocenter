@@ -1,76 +1,78 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 
-const Card = styled.div`
-  max-width: 282px;
-  height: 348px;
+const Base = styled.div`
+  transition: ${props => props.theme.transitions.create(['background', 'box-shadow'], {
+    duration: props.theme.transitions.duration.short,
+    easing: props.theme.transitions.easing.easeInOut
+  })};
+  flex: 1;
+  position: relative;
+
   background: ${props => props.background};
-  border-radius: 20px;
-  color: black;
+  border-left: 1px solid #3F3754;
+  border-bottom: 1px solid #3F3754;
+
+  min-width: 220px;
+  max-width: 240px;
+  height: 220px;
+  color: ${props => props.theme.palette.text.primary};
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 16px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: ${props => props.theme.shadows[24]};
+    z-index: 2;
+  }
 `;
 
-const Main = styled.div`
-  padding: 16px 24px 0;
+const Type = styled.div`
+  font-size: 14px;
+  color: ${props => props.color};
 `;
 
-const CardTitle = styled.div`
-  font-style: italic;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-`;
+const Title = styled.div`
+  margin-top: 8px;
+  height: 104px;
 
-const Date = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 0px;
-  margin-top: 24px;
-
-  font-style: italic;
-  font-weight: bold;
-  font-size: 32px;
-  background: ${props => props.timeBgr};
-  border-radius: 16px;
-`;
-const DateDetails = styled.div`
-  font-style: italic;
-  font-weight: bold;
-  font-size: 16px;
-`;
-
-const Footer = styled.div``;
-const PatternImg = styled(Image)``;
-
-const SignUp = styled.button`
+  line-height: 1.25em;
+  font-family: ${props => props.fontFamily ? props.fontFamily : 'inherit'};
+  color: ${props => props.color};
   font-style: italic;
   font-weight: 600;
-  font-size: 16px;
-  width: 100%;
-  padding: 16px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
+  font-size: ${props => props.fontSize ? props.fontSize : '20px'};
 `;
 
-const ScheduleCard = ({ title, time, details, img, background, timeBgr }) => (
-  <Card background={background}>
-    <Main>
-      <CardTitle>{title}</CardTitle>
-      <Date timeBgr={timeBgr}>
-        {time}
-        <DateDetails>{details}</DateDetails>
-      </Date>
-    </Main>
-    <Footer>
-      <PatternImg src={img} />
-      <SignUp>Записаться</SignUp>
-    </Footer>
-  </Card>
+const Time = styled.div`
+  margin-top: 4px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+`;
+const Date = styled.div`
+  font-style: italic;
+  font-weight: 600;
+  font-size: 14px;
+`;
+
+const ScheduleCard = ({
+                        title,
+                        type,
+                        time,
+                        date,
+                        background,
+                        typeColor,
+                        titleColor,
+                        titleFontFamily,
+                        titleFontSize
+                      }) => (
+  <Base background={background}>
+    <Type color={typeColor}>{type}</Type>
+    <Title color={titleColor} fontFamily={titleFontFamily} fontSize={titleFontSize}>{title}</Title>
+    <Date>{date}</Date>
+    <Time>{time}</Time>
+  </Base>
 );
 
 export default ScheduleCard;

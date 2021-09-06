@@ -26,7 +26,7 @@ const Layout = ({ children, size = 'md' }) => (
         animate="enter"
         exit="exit"
         variants={variants}
-        transition={{ type: 'spring' }}
+        transition={{ type: 'orchestration' }}
         className="
           flex flex-col items-start w-full pt-10
           px-8 sm:px-16 md:px-36 lg:px-52 xl:px-80 2xl:px-96

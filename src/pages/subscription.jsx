@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Layout from '../App/components/Layout';
 import SubscriptionCard from '../App/components/SubscriptionCard';
+import TryMeditation from '../App/components/TryMeditation';
 
 const Base = styled.div`
   display: flex;
@@ -9,21 +10,28 @@ const Base = styled.div`
 `;
 
 const Title = styled.h1`
-  display: flex;
   align-items: baseline;
 
   font-style: italic;
   font-weight: bold;
-  font-size: 32px;
-  display: block;
-  margin: 8px;
+  font-size: 24px;
+  margin: 40px 0 0;
   text-align: center;
 `;
 
-const SubscribtionInfo = [
+const Subtitle = styled.div`
+  max-width: 480px;
+  margin: 16px auto 40px;
+  
+  font-style: italic;
+  text-align: center;
+`;
+
+const subscriptions = [
+
   {
-    title: 'Абонемент 12 месяцев',
-    price: '26000',
+    title: 'Абонемент 3 месяца',
+    price: '12000',
     background: 'rgba(182, 227, 255, 0.24)',
     color: '#82B1FF',
   },
@@ -34,8 +42,8 @@ const SubscribtionInfo = [
     color: '#82B1FF',
   },
   {
-    title: 'Абонемент 3 месяца',
-    price: '12000',
+    title: 'Абонемент 12 месяцев',
+    price: '26000',
     background: 'rgba(182, 227, 255, 0.24)',
     color: '#82B1FF',
   },
@@ -68,11 +76,17 @@ const SubscribtionInfo = [
 const Subscription = () => (
   <Layout>
     <Title>Стоимость и абонементы</Title>
+    <Subtitle>
+      Абонементы действуют только на Ошо Медитации. <br/>
+      С ними вы можете посещать любое количество занятий в течении выбранного периода
+    </Subtitle>
     <Base>
-      {SubscribtionInfo.map(item => (
+      {subscriptions.map(item => (
         <SubscriptionCard key={item.title} {...item} />
       ))}
     </Base>
+
+    <TryMeditation />
   </Layout>
 );
 

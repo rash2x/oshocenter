@@ -16,7 +16,7 @@ const HeaderWrapper = styled.header`
 
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 14px;
 `;
 
 const Nav = styled.nav``;
@@ -29,7 +29,7 @@ const Ul = styled.ul`
   cursor: pointer;
 `;
 const ListItem = styled.li`
-  margin: 0 40px;
+  margin: 0 16px;
 
   a {
     color: #fff;
