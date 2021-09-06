@@ -18,7 +18,16 @@ const theme = createTheme({
   overrides: {
     MuiMenu: {
       paper: {
-        background: '#fff',
+        background: '#7C4DFF',
+      },
+    },
+    MuiMenuItem: {
+      root: {
+        color: '#0F0529',
+        '& a': {
+          color: '#fff',
+          textDecoration: 'none',
+        },
       },
     },
   },
