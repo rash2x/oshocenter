@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import Man from '../../../public/Man.jpg';
 
 const Card = styled.div`
   max-width: 690px;
@@ -46,18 +45,15 @@ const Job = styled.div`
   color: rgba(255, 255, 255, 0.54);
 `;
 
-const Review = () => (
+const Review = ({ text, author, job, avatar }) => (
   <Card>
     <Avatar>
-      <Image src={Man} alt="Man" />
+      <Image src={avatar} alt="Man" />
     </Avatar>
     <ReviewWrapper>
-      <Text>
-        Я наконец-то стала собой. Чувствовать вкус кофе, видеть солнечные лучи, танцевать без
-        причины! Как я жила раньше?
-      </Text>
-      <Author>Юлия, 22 года</Author>
-      <Job>Тестировщик в IT</Job>
+      <Text>{text}</Text>
+      <Author>{author}</Author>
+      <Job>{job}</Job>
     </ReviewWrapper>
   </Card>
 );
