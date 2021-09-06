@@ -6,7 +6,6 @@ import MapImg from '../../public/Map.jpg';
 
 const Base = styled.div`
   display: flex;
-  margin: 90px 0 180px;
 `;
 
 const Info = styled.div`
@@ -32,7 +31,7 @@ const Number = styled.a`
   font-size: 24px;
   text-decoration: none;
   color: #fff;
-  margin: 4px 0 40px;
+  margin: 4px 0 28px;
 `;
 
 const Address = styled.div`
@@ -80,7 +79,7 @@ const LocationImg = styled.div`
   div {
     border-radius: ${props => props.theme.spacing(1)}px;
     width: 140px;
-    height: 140px;
+    height: 120px;
   }
 `;
 
