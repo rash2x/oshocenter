@@ -19,7 +19,6 @@ const Info = styled.div`
 `;
 
 const Text = styled.div`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -27,7 +26,6 @@ const Text = styled.div`
 `;
 
 const Number = styled.a`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -37,7 +35,6 @@ const Number = styled.a`
 `;
 
 const Address = styled.div`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: 700;
   font-size: 24px;

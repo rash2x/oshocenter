@@ -20,7 +20,6 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h1`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: 500;
   font-size: 40px;
@@ -28,7 +27,6 @@ const Subtitle = styled.h1`
 `;
 
 const Philosopher = styled.div`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: 700;
   font-size: 56px;
@@ -42,7 +40,6 @@ const Bold = styled.div`
   margin-right: 16px;
 `;
 const ExtraBold = styled.div`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: 600;
   font-size: 52px;
@@ -65,7 +62,7 @@ const SignUpButton = styled.button`
   border-radius: 24px;
   color: #fff;
   padding: 16px 24px;
-  font-family: Montserrat;
+
   font-style: italic;
   font-weight: 600;
   font-size: 20px;

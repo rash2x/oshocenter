@@ -3,7 +3,6 @@ import Layout from '../App/components/Layout';
 import Reviews from '../App/components/Reviews';
 
 const Title = styled.h1`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: bold;
   font-size: 36px;
@@ -29,7 +28,6 @@ const Info = styled.div`
   margin-bottom: 185px;
 `;
 const InfoCard = styled.div`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: bold;
   font-size: 36px;

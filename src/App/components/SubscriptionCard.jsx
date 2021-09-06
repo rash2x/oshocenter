@@ -25,7 +25,6 @@ const Header = styled.header`
 `;
 
 const Title = styled.h1`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -35,7 +34,6 @@ const Title = styled.h1`
 `;
 
 const Price = styled.div`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;

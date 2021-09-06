@@ -13,7 +13,6 @@ const Base = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: bold;
   font-size: 32px;
@@ -23,7 +22,6 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.h2`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -38,12 +36,10 @@ const Subtitle = styled.h2`
 `;
 
 const FreeLesson = styled.div`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
   text-align: center;
-  color: ${props => props.theme.palette.primary.extra};
 `;
 
 const ScheduleInfo = [
@@ -79,12 +75,12 @@ const Schedule = () => (
     <Subtitle>
       Любая ежедневная медитация <span>300 руб</span>
     </Subtitle>
+    <FreeLesson>Первое занятие бесплатно</FreeLesson>
     <Base>
       {ScheduleInfo.map(item => (
         <ScheduleCard key={item.title} {...item} />
       ))}
     </Base>
-    <FreeLesson>Первое занятие бесплатно</FreeLesson>
   </Layout>
 );
 

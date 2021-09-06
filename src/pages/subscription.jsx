@@ -11,7 +11,7 @@ const Base = styled.div`
 const Title = styled.h1`
   display: flex;
   align-items: baseline;
-  font-family: Montserrat;
+
   font-style: italic;
   font-weight: bold;
   font-size: 32px;

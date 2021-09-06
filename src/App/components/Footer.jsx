@@ -11,14 +11,13 @@ const FooterWrapper = styled.footer`
   align-items: center;
   color: #fff;
   padding: 22px 32px;
-  font-family: Montserrat;
+
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
 `;
 
 const Copyright = styled.div`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -28,7 +27,6 @@ const Info = styled.div`
   max-width: 690px;
 `;
 const About = styled.p`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 9px;
@@ -56,7 +54,6 @@ const IconWrapper = styled.div`
 `;
 
 const Address = styled.div`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

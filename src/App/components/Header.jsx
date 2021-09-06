@@ -10,7 +10,7 @@ const HeaderWrapper = styled.header`
   align-items: center;
   color: #fff;
   padding: 22px 32px;
-  font-family: Montserrat;
+
   font-style: normal;
   font-weight: 600;
   font-size: 18px;

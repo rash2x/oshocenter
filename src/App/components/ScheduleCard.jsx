@@ -17,7 +17,6 @@ const Main = styled.div`
 `;
 
 const CardTitle = styled.div`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: bold;
   font-size: 24px;
@@ -31,7 +30,7 @@ const Date = styled.div`
   align-items: center;
   padding: 12px 0px;
   margin-top: 24px;
-  font-family: Montserrat;
+
   font-style: italic;
   font-weight: bold;
   font-size: 32px;
@@ -39,7 +38,6 @@ const Date = styled.div`
   border-radius: 16px;
 `;
 const DateDetails = styled.div`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: bold;
   font-size: 16px;
@@ -49,7 +47,6 @@ const Footer = styled.div``;
 const PatternImg = styled(Image)``;
 
 const SignUp = styled.button`
-  font-family: Montserrat;
   font-style: italic;
   font-weight: 600;
   font-size: 16px;
