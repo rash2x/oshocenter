@@ -15,6 +15,13 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Montserrat',
   },
+  overrides: {
+    MuiMenu: {
+      paper: {
+        background: '#fff',
+      },
+    },
+  },
 });
 
 export default theme;
