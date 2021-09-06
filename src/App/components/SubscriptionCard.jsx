@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Link from 'next/link';
 import Logo from './Logo';
 
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: rgba(231, 185, 255, 0.24);
+  background: ${props => props.background};
+  box-shadow: 0px 8px 24px 2px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   max-width: 256px;
+  width: 256px;
   height: 148px;
   padding: ${props => props.theme.spacing(2, 2)};
   text-align: end;
-  margin: 16px;
+  margin: 8px;
 `;
 
 const Header = styled.header`
@@ -30,6 +31,7 @@ const Title = styled.h1`
   font-size: 16px;
   margin: 0;
   text-align: left;
+  color: ${props => props.color};
 `;
 
 const Price = styled.div`
@@ -39,16 +41,14 @@ const Price = styled.div`
   font-size: 20px;
 `;
 
-const SubscriptionCard = () => (
-  <Link href="/">
-    <CardWrapper>
-      <Header>
-        <Title>Ежедневная медитация</Title>
-        <Logo inverse />
-      </Header>
-      <Price>300 руб</Price>
-    </CardWrapper>
-  </Link>
+const SubscriptionCard = ({ title, price, background, color }) => (
+  <CardWrapper background={background}>
+    <Header>
+      <Title color={color}>{title}</Title>
+      <Logo inverse />
+    </Header>
+    <Price>{price} руб</Price>
+  </CardWrapper>
 );
 
 export default SubscriptionCard;
