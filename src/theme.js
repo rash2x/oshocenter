@@ -9,11 +9,17 @@ const theme = createTheme({
     type: 'light',
     background: {
       default: '#FEF9FF',
-      main: '#ECE9DE',
+      paper: '#FCF2FD',
     },
   },
   typography: {
     fontFamily: 'Montserrat',
+    fontSize: 16,
+
+    body1: {
+      fontSize: 16,
+      fontWeight: 600,
+    }
   },
   overrides: {
     MuiButton: {
@@ -27,17 +33,16 @@ const theme = createTheme({
         fontSize: '18px'
       }
     },
-    MuiMenu: {
-      paper: {
-        background: '#7C4DFF',
-      },
-    },
     MuiMenuItem: {
       root: {
-        color: '#0F0529',
         '& a': {
-          color: '#fff',
           textDecoration: 'none',
+          fontSize: 14,
+          color: 'rgba(0, 0, 0, 0.87)',
+
+          '&:hover': {
+            color: '#7C4DFF'
+          }
         },
       },
     },

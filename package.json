@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "babel src -d lib",
+    "build": "next build",
     "test": "jest"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "jss": "^10.7.1",
     "prettier": "^2.3.2"
   }
 }

@@ -24,6 +24,7 @@ const Ul = styled.ul`
   justify-content: space-evenly;
   align-items: center;
   padding: 0;
+  margin: 0;
   list-style: none;
   cursor: pointer;
 `;
@@ -51,8 +52,6 @@ const ListItem = styled.li`
   }
 `;
 const LinkItem = styled(Link)``;
-
-const Dropdown = styled(Menu)``;
 
 const Number = styled.div`
   a {
@@ -84,52 +83,53 @@ const Header = () => {
   };
 
   return (
-    <HeaderWrapper>
-      <LinkItem href="/">
-        <Logo />
-      </LinkItem>
-      <Nav>
-        <Ul>
-          <ListItem onClick={handleClick} onMouseOver={handleClick}>
+    <>
+      <HeaderWrapper>
+        <LinkItem href="/">
+          <Logo />
+        </LinkItem>
+        <Nav>
+          <Ul>
+            <ListItem onClick={handleClick} onMouseOver={handleClick}>
+              О медитациях
+              <ExpandMoreRounded fontSize={'small'} />
+            </ListItem>
+            <ListItem>
+              <LinkItem href="/schedule">Расписание </LinkItem>
+            </ListItem>
+            <ListItem>
+              <LinkItem href="/subscription">Стоимость </LinkItem>
+            </ListItem>
+            <ListItem>
+              <LinkItem href="/location">Как добраться? </LinkItem>
+            </ListItem>
+          </Ul>
+        </Nav>
+        <Number>
+          <LinkItem href="tel:+78129220604">+7 (812) 922-06-04</LinkItem>
+        </Number>
+      </HeaderWrapper>
+      <Menu
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        MenuListProps={{ onMouseLeave: handleClose }}
+        getContentAnchorEl={null}
+      >
+        <MenuItem onClick={handleClose}>
+          <LinkItem href="/about" onClick={handleClose}>
             О медитациях
-            <ExpandMoreRounded fontSize={'small'} />
-          </ListItem>
-
-          <Dropdown
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            MenuListProps={{ onMouseLeave: handleClose }}
-            getContentAnchorEl={null}
-          >
-            <MenuItem onClick={handleClose}>
-              <LinkItem href="/about" onClick={handleClose}>
-                О медитациях
-              </LinkItem>
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
-              <LinkItem href="/about" onClick={handleClose}>
-                О Центре
-              </LinkItem>
-            </MenuItem>
-          </Dropdown>
-          <ListItem>
-            <LinkItem href="/schedule">Расписание </LinkItem>
-          </ListItem>
-          <ListItem>
-            <LinkItem href="/subscription">Стоимость </LinkItem>
-          </ListItem>
-          <ListItem>
-            <LinkItem href="/location">Как добраться? </LinkItem>
-          </ListItem>
-        </Ul>
-      </Nav>
-      <Number>
-        <LinkItem href="tel:+78129220604">+7 (812) 922-06-04</LinkItem>
-      </Number>
-    </HeaderWrapper>
+          </LinkItem>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <LinkItem href="/about" onClick={handleClose}>
+            О Центре
+          </LinkItem>
+        </MenuItem>
+      </Menu>
+    </>
   );
 };
 

@@ -103,6 +103,7 @@ const meditations = [
     date: '',
     background: '',
     typeColor: '#B388FF',
+    disabled: true,
   },
 ];
 
@@ -147,15 +148,15 @@ const events = [
 const Schedule = () => (
   <>
     <Head>
-      <title>Schedule</title>
+      <title>Расписание | Центр Ошо Медитаций</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Layout>
       <Title>Расписание медитаций</Title>
       <Subtitle>“Медитация с утра помогает начать отличный день”</Subtitle>
       <ScheduleList>
-        {events.map(item => (
-          <ScheduleCard key={item.title} {...item} isEvent={true} />
+        {meditations.map(item => (
+          <ScheduleCard key={item.title} {...item} />
         ))}
       </ScheduleList>
 
@@ -163,7 +164,7 @@ const Schedule = () => (
         <Title>Ближайшие события</Title>
         <ScheduleList>
           {events.map(item => (
-            <ScheduleCard key={item.title} {...item} />
+            <ScheduleCard key={item.title} {...item} isEvent={true} />
           ))}
         </ScheduleList>
       </Events>

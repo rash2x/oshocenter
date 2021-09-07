@@ -33,7 +33,6 @@ const Number = styled.a`
   font-weight: bold;
   font-size: 24px;
   text-decoration: none;
-  color: #fff;
   margin: 4px 0 28px;
 `;
 
@@ -43,7 +42,6 @@ const Address = styled.div`
   font-size: 24px;
 `;
 const City = styled.div`
-  color: rgba(255, 255, 255, 0.72);
   font-size: 14px;
   margin: 16px 0 4px;
 `;
@@ -104,7 +102,7 @@ const Location = () => {
   return (
     <>
       <Head>
-        <title>Location</title>
+        <title>Как добраться? | Центр Ошо Медитаций</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Layout>

@@ -48,7 +48,7 @@ const CardText = styled.p`
 const About = () => (
   <>
     <Head>
-      <title>About</title>
+      <title>Активные Медитации Ошо Центр Медитаций</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Layout size="lg">

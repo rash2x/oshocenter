@@ -66,7 +66,7 @@ const SignUpButton = styled(Button)`
 const Home = () => (
   <>
     <Head>
-      <title>Welcome</title>
+      <title>Центр Ошо Медитаций</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Layout>

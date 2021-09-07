@@ -10,6 +10,7 @@ const Base = styled.div`
 const Text = styled.div`
   margin: 24px 0;
   font-size: 16px;
+  font-weight: 600;
   font-style: italic;
 `;
 

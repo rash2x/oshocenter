@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Base = styled.div`
   transition: ${props => props.theme.transitions.create(['background', 'box-shadow'], {
@@ -20,11 +20,13 @@ const Base = styled.div`
   flex-direction: column;
   padding: 16px;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: ${props => props.theme.shadows[24]};
-    z-index: 2;
-  }
+  ${props => !props.disabled && css`
+    &:hover {
+      background: #fff;
+      z-index: 2;
+      cursor: default;
+    }
+  `}
 `;
 
 const Type = styled.div`
@@ -66,9 +68,10 @@ const ScheduleCard = ({
                         titleColor,
                         titleFontFamily,
                         titleFontSize,
-                        isEvent
+                        isEvent,
+                        disabled
                       }) => (
-  <Base background={background}>
+  <Base background={background} disabled={disabled}>
     <Type color={typeColor}>{type}</Type>
     <Title color={titleColor} fontFamily={titleFontFamily} fontSize={titleFontSize}>{title}</Title>
     {isEvent ? <>
