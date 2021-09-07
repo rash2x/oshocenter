@@ -27,11 +27,23 @@ const Base = styled.div`
       cursor: default;
     }
   `}
+
+  @media (max-width: 600px) {
+    height: 184px;
+    width: 50%;
+    min-width: 150px;
+    box-sizing: border-box;
+  }
+}
 `;
 
 const Type = styled.div`
   font-size: 14px;
   color: ${props => props.color};
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const Title = styled.div`
@@ -44,6 +56,10 @@ const Title = styled.div`
   font-style: italic;
   font-weight: 600;
   font-size: ${props => props.fontSize ? props.fontSize : '20px'};
+
+  @media (max-width: 960px) {
+    font-size: 16px;
+  }
 `;
 
 const Time = styled.div`
@@ -51,11 +67,19 @@ const Time = styled.div`
   font-style: italic;
   font-weight: 700;
   font-size: 24px;
+
+  @media (max-width: 960px) {
+    font-size: 20px;
+  }
 `;
 const Date = styled.div`
   font-style: italic;
   font-weight: 600;
   font-size: 14px;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const ScheduleCard = ({

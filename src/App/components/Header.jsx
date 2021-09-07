@@ -1,10 +1,9 @@
-import React from 'react';
+import React  from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import Logo from './Logo';
-import { ExpandMoreRounded } from '@material-ui/icons';
+import { ExpandMoreRounded, MenuRounded } from '@material-ui/icons';
+import { Collapse, Drawer, IconButton, List, MenuItem, Menu } from '@material-ui/core';
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -19,7 +18,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const Nav = styled.nav`
-  @media (max-width: 425px) {
+  @media (max-width: 960px) {
     display: none;
   }
 `;
@@ -73,8 +72,51 @@ const Number = styled.div`
   }
 `;
 
+const MenuButton = styled(IconButton)`
+  display: none !important;
+
+  @media (max-width: 960px) {
+    display: block !important;
+  }
+`;
+
+const PhoneList = styled(List)`
+  li {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    
+    a {
+      height: 40px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      flex: 1;
+    }
+  }
+`;
+
+const PhoneSubList = styled(PhoneList)`
+  li {
+    a {
+      padding-left: 32px;
+    }
+  }
+`;
+
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [phoneListOpen, setPhoneListOpen] = React.useState(false);
+
+  const handleToggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setDrawerOpen(open);
+  };
 
   const handleClick = event => {
     if (anchorEl !== event.currentTarget) {
@@ -84,6 +126,10 @@ const Header = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handlePhoneListToggle = () => {
+    setPhoneListOpen(!phoneListOpen);
   };
 
   return (
@@ -112,6 +158,9 @@ const Header = () => {
         <Number>
           <LinkItem href="tel:+78129220604">+7 (812) 922-06-04</LinkItem>
         </Number>
+        <MenuButton color="inherit" aria-label="menu" onClick={handleToggleDrawer(true)}>
+          <MenuRounded />
+        </MenuButton>
       </HeaderWrapper>
       <Menu
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
@@ -133,6 +182,37 @@ const Header = () => {
           </LinkItem>
         </MenuItem>
       </Menu>
+      <Drawer anchor={'top'} open={drawerOpen} onClose={handleToggleDrawer(false)}>
+        <PhoneList component="nav" aria-label="main mailbox folders">
+          <ListItem onClick={handlePhoneListToggle}>
+            О медитациях
+            <ExpandMoreRounded fontSize={'small'} />
+          </ListItem>
+          <Collapse in={phoneListOpen} timeout="auto" unmountOnExit>
+            <PhoneSubList component="div" disablePadding>
+              <ListItem>
+                <LinkItem href="/about" onClick={handlePhoneListToggle}>
+                  О медитациях
+                </LinkItem>
+              </ListItem>
+              <ListItem>
+                <LinkItem href="/about" onClick={handlePhoneListToggle}>
+                  О Центре
+                </LinkItem>
+              </ListItem>
+            </PhoneSubList>
+          </Collapse>
+          <ListItem>
+            <LinkItem href="/schedule">Расписание</LinkItem>
+          </ListItem>
+          <ListItem>
+            <LinkItem href="/subscription">Стоимость</LinkItem>
+          </ListItem>
+          <ListItem>
+            <LinkItem href="/location">Контакты</LinkItem>
+          </ListItem>
+        </PhoneList>
+      </Drawer>
     </>
   );
 };

@@ -21,6 +21,15 @@ const theme = createTheme({
       fontWeight: 600,
     }
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   overrides: {
     MuiButton: {
       root: {
@@ -30,7 +39,12 @@ const theme = createTheme({
       },
       sizeLarge: {
         borderRadius: '30px',
-        fontSize: '18px'
+        fontSize: '18px',
+
+        '@media (max-width: 960px)': {
+          fontSize: '16px',
+          padding: '8px 20px'
+        }
       }
     },
     MuiMenuItem: {

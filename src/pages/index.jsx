@@ -84,10 +84,6 @@ const PlayButton = styled.button`
 `;
 const SignUpButton = styled(Button)`
   margin-top: 60px;
-
-  @media (max-width: 425px) {
-    display: none !important;
-  }
 `;
 
 const Home = () => (
