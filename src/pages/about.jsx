@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import Layout from '../App/components/Layout';
 import Reviews from '../App/components/Reviews';
@@ -45,40 +46,46 @@ const CardText = styled.p`
 `;
 
 const About = () => (
-  <Layout size="lg">
-    <Title>
-      Активные Ошо Медитации помогают <Green>прийти в чувства</Green>,
-      <Orange> избавиться от эмоционального груза</Orange> и <Rose>наполниться энергией</Rose>
-    </Title>
-    <Info>
-      <InfoCard>
-        <CardTitle>
-          Более <br /> 16 разных медитаций
-        </CardTitle>
-        <CardText>
-          Каждая медитация нацелена на конкретную прокачку. Где-то мы центрируемся, где избавляемся
-          от блоков, где-то смеемся целый час а где-то сидим в тишине
-        </CardText>
-      </InfoCard>
-      <InfoCard>
-        <CardTitle>Только оригинальная подача</CardTitle>
-        <CardText>
-          Все медитации соблюдают оригинальные инструкции и музыку, созданные Ошо и его командой.
-          Инструкторы получают сертификаты и потом только ведут медитации.
-        </CardText>
-      </InfoCard>
-      <InfoCard>
-        <CardTitle>
-          Возможность быть <br /> тотальным
-        </CardTitle>
-        <CardText>
-          В медитациях есть инструкции, но нет правил. Вы можете свободно выражать свои чувства.
-          Громко кричать или смеяться, плакать или признаваться в любви.
-        </CardText>
-      </InfoCard>
-    </Info>
-    <Reviews />
-  </Layout>
+  <>
+    <Head>
+      <title>About</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <Layout size="lg">
+      <Title>
+        Активные Ошо Медитации помогают <Green>прийти в чувства</Green>,
+        <Orange> избавиться от эмоционального груза</Orange> и <Rose>наполниться энергией</Rose>
+      </Title>
+      <Info>
+        <InfoCard>
+          <CardTitle>
+            Более <br /> 16 разных медитаций
+          </CardTitle>
+          <CardText>
+            Каждая медитация нацелена на конкретную прокачку. Где-то мы центрируемся, где
+            избавляемся от блоков, где-то смеемся целый час а где-то сидим в тишине
+          </CardText>
+        </InfoCard>
+        <InfoCard>
+          <CardTitle>Только оригинальная подача</CardTitle>
+          <CardText>
+            Все медитации соблюдают оригинальные инструкции и музыку, созданные Ошо и его командой.
+            Инструкторы получают сертификаты и потом только ведут медитации.
+          </CardText>
+        </InfoCard>
+        <InfoCard>
+          <CardTitle>
+            Возможность быть <br /> тотальным
+          </CardTitle>
+          <CardText>
+            В медитациях есть инструкции, но нет правил. Вы можете свободно выражать свои чувства.
+            Громко кричать или смеяться, плакать или признаваться в любви.
+          </CardText>
+        </InfoCard>
+      </Info>
+      <Reviews />
+    </Layout>
+  </>
 );
 
 export default About;
