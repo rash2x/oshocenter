@@ -8,7 +8,6 @@ const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background: ${props => props.background};
-  box-shadow: 0px 8px 24px 2px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   max-width: 256px;
   width: 256px;

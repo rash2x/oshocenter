@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import Image from 'next/image';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Arrow from '../../../public/arrowDown.svg';
 import Logo from './Logo';
+import { ExpandMoreRounded } from '@material-ui/icons';
 
 const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
-  padding: 22px 32px;
+  color: ${props => props.theme.palette.text.primary};
+  padding: 16px 20px 16px 10px;
 
   font-style: normal;
   font-weight: 600;
@@ -32,7 +31,7 @@ const ListItem = styled.li`
   margin: 0 16px;
 
   a {
-    color: #fff;
+    color: ${props => props.theme.palette.text.primary};
     text-decoration: none;
     transition: 0.3s all;
     padding: 8px;
@@ -41,23 +40,29 @@ const ListItem = styled.li`
       color: #b388ff;
     }
   }
+  
+  svg {
+    margin-left: 4px;
+  }
+  
   &:first-child {
     display: flex;
     align-items: center;
   }
 `;
-const ArrowImg = styled(Image)``;
 const LinkItem = styled(Link)``;
 
 const Dropdown = styled(Menu)``;
 
 const Number = styled.div`
   a {
-    color: #fff;
+    color: ${props => props.theme.palette.text.primary};
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s all;
     padding: 8px;
+    
+    font-size: 16px;
 
     &:hover {
       color: #b388ff;
@@ -87,7 +92,7 @@ const Header = () => {
         <Ul>
           <ListItem onClick={handleClick} onMouseOver={handleClick}>
             О медитациях
-            <ArrowImg src={Arrow} />
+            <ExpandMoreRounded fontSize={'small'} />
           </ListItem>
 
           <Dropdown
@@ -106,7 +111,7 @@ const Header = () => {
             </MenuItem>
             <MenuItem onClick={handleClose}>
               <LinkItem href="/about" onClick={handleClose}>
-                О медитациях
+                О Центре
               </LinkItem>
             </MenuItem>
           </Dropdown>

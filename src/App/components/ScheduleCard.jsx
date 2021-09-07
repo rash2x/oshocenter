@@ -9,8 +9,8 @@ const Base = styled.div`
   position: relative;
 
   background: ${props => props.background};
-  border-left: 1px solid #3F3754;
-  border-bottom: 1px solid #3F3754;
+  border-left: 1px solid ${props => props.theme.palette.divider};
+  border-bottom: 1px solid ${props => props.theme.palette.divider};
 
   min-width: 220px;
   max-width: 240px;
@@ -65,13 +65,20 @@ const ScheduleCard = ({
                         typeColor,
                         titleColor,
                         titleFontFamily,
-                        titleFontSize
+                        titleFontSize,
+                        isEvent
                       }) => (
   <Base background={background}>
     <Type color={typeColor}>{type}</Type>
     <Title color={titleColor} fontFamily={titleFontFamily} fontSize={titleFontSize}>{title}</Title>
-    <Date>{date}</Date>
-    <Time>{time}</Time>
+    {isEvent ? <>
+      <Time>{date}</Time>
+      <Date>{time}</Date>
+    </> : <>
+      <Date>{date}</Date>
+      <Time>{time}</Time>
+    </>}
+
   </Base>
 );
 

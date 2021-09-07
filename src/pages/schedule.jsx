@@ -8,8 +8,8 @@ const ScheduleList = styled.div`
   margin-bottom: 42px;
   margin-top: 40px;
   flex-wrap: wrap;
-  border-right: 1px solid #3F3754;
-  border-top: 1px solid #3F3754;
+  border-right: 1px solid ${props => props.theme.palette.divider};
+  border-top: 1px solid ${props => props.theme.palette.divider};
 `;
 
 const Title = styled.h1`
@@ -45,7 +45,7 @@ const meditations = [
     time: '7:00 - 8:00',
     date: 'Каждое утро',
     background: 'rgba(179, 136, 255, 0.1)',
-    typeColor: '#B388FF',
+    typeColor: '#7c4dff',
   },
   {
     title: 'Кундалини медитация',
@@ -53,7 +53,7 @@ const meditations = [
     time: '19:00 - 20:00',
     date: 'Каждое утро',
     background: 'rgba(179, 136, 255, 0.1)',
-    typeColor: '#B388FF',
+    typeColor: '#7c4dff',
   },
   {
     title: 'Чакровое дыхание',
@@ -61,7 +61,7 @@ const meditations = [
     time: '8:30 - 9:30',
     date: 'Каждую субботу',
     background: 'rgba(179, 136, 255, 0.1)',
-    typeColor: '#B388FF',
+    typeColor: '#7c4dff',
   },
   {
     title: 'Тантра Света',
@@ -69,7 +69,7 @@ const meditations = [
     time: '20:15 - 22:15',
     date: 'Каждый вторник',
     background: 'rgba(179, 136, 255, 0.1)',
-    typeColor: '#B388FF',
+    typeColor: '#7c4dff',
   },
   {
     title: 'Арт & Медитация',
@@ -77,15 +77,15 @@ const meditations = [
     time: '19:00 - 20:00',
     date: 'Каждую среду',
     background: 'rgba(179, 136, 255, 0.1)',
-    typeColor: '#B388FF',
+    typeColor: '#7c4dff',
   },
   {
     title: 'Energy Flow Dance',
     type: 'Медитация',
     time: '20:15 - 22:15',
-    date: 'Каждый вторник',
+    date: '10 сентября',
     background: '',
-    typeColor: '#FF80AB',
+    typeColor: '#ff4081',
   },
   {
     title: 'АУМ',
@@ -93,7 +93,7 @@ const meditations = [
     time: '19:00 - 22:30',
     date: '6 сентября',
     background: '',
-    typeColor: '#FF80AB',
+    typeColor: '#ff4081',
   },
   {
     title: '',
@@ -110,9 +110,9 @@ const events = [
     title: 'Тренинг ведущих ОШО медитаций',
     type: 'Тренинг',
     time: '7:00 - 8:00',
-    date: '8 - 28 ноября',
+    date: '8-28 ноября',
     background: '',
-    typeColor: '#B9F6CA',
+    typeColor: '#00b686',
   },
   {
     title: 'Ошо-Суфи-Дзен “Жизнь. Любовь. Смех.” 💫',
@@ -120,24 +120,24 @@ const events = [
     time: '19:00 - 20:00',
     date: '1-3 октября',
     background: 'rgba(255, 209, 128, 0.1)',
-    typeColor: '#FFD180',
+    typeColor: '#ffc400',
   },
   {
     title: 'Тренинг по классическому массажу',
-    type: 'Ошо медитация',
+    type: 'Тренинг',
     time: '8:30 - 9:30',
-    date: '6 - 10 октября',
+    date: '6-10 октября',
     background: '',
-    typeColor: '#B9F6CA',
+    typeColor: '#00b686',
   },
   {
     title: 'Ошо Мистическая Роза 🌹',
     type: 'Терапия',
     time: '19:00 - 22:00',
-    date: 'Каждый вторник',
+    date: '8-28 ноября',
     background: 'rgba(255, 82, 82, 0.1)',
-    typeColor: '#FF9E80',
-    titleColor: '#FF5252',
+    typeColor: '#f50057',
+    titleColor: '#f50057',
     titleFontFamily: 'Philosopher',
     titleFontSize: '24px',
   },
@@ -157,7 +157,7 @@ const Schedule = () => (
       <Title>Ближайшие события</Title>
       <ScheduleList>
         {events.map(item => (
-          <ScheduleCard key={item.title} {...item} />
+          <ScheduleCard key={item.title} {...item} isEvent={true} />
         ))}
       </ScheduleList>
     </Events>

@@ -10,7 +10,7 @@ const FooterWrapper = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: ${props => props.theme.palette.text.primary};
   padding: 22px 32px;
 
   font-style: normal;

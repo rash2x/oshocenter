@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
-import LogoImage from '../../../public/Logo.svg';
+import LogoImage from '../../../public/Osho-logotype.svg';
 import CardLogo from '../../../public/CardLogo.svg';
 
 const LogoIcon = styled(Image)`
-  width: 135px;
-  height: 52px;
+  width: 103px;
   cursor: pointer;
 `;
 

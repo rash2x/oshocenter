@@ -12,19 +12,21 @@ const Base = styled.div`
   justify-content: space-evenly;
 `;
 
-const Text = styled.div``;
+const Text = styled.div`
+  margin-bottom: 40px;
+`;
 
 const Title = styled.h1`
   display: flex;
   align-items: baseline;
-  margin: 0 0 16px 0;
+  margin: 0;
 `;
 
 const Subtitle = styled.h1`
+  margin-top: 0;
   font-style: italic;
-  font-weight: 500;
-  font-size: 40px;
-  margin: 0;
+  font-weight: 600;
+  font-size: 32px;
 `;
 
 const Philosopher = styled.div`
@@ -57,7 +59,7 @@ const PlayButton = styled.button`
   margin: 24px 0;
 `;
 const SignUpButton = styled(Button)`
-  
+  margin-top: 60px;
 `;
 
 const Home = () => (

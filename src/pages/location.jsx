@@ -104,7 +104,7 @@ const Location = () => {
     <Layout>
       <Base>
         <Info>
-          <Text>Позвоните, если возникли вопросы как добраться</Text>
+          <Text>Контактный телефон</Text>
           <Number>+7 (812) 922-06-04</Number>
           <Address>
             <Text>Основной адрес</Text>
@@ -134,13 +134,12 @@ const Location = () => {
           </Wrapper>
         </Info>
         <div style={{ height: '518px', width: '420px' }}>
-          <GoogleMapReact defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom}>
+          <GoogleMapReact defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom} bootstrapURLKeys={{
+            key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"
+          }}>
             <AnyReactComponent lat={59.9407315} lng={30.3226824} icon={MapIcon} />
           </GoogleMapReact>
         </div>
-        {/* <Map>
-          <Image src={MapImg} alt="Map" />
-        </Map> */}
       </Base>
     </Layout>
   );
