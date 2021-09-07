@@ -8,8 +8,8 @@ const ScheduleList = styled.div`
   margin-bottom: 42px;
   margin-top: 40px;
   flex-wrap: wrap;
-  border-right: 1px solid #3F3754;
-  border-top: 1px solid #3F3754;
+  border-right: 1px solid #3f3754;
+  border-top: 1px solid #3f3754;
 `;
 
 const Title = styled.h1`

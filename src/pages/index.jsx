@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 import Layout from '../App/components/Layout';
 import Play from '../../public/Play.svg';
-import Button from '@material-ui/core/Button';
 
 const Base = styled.div`
   display: flex;
@@ -56,9 +56,7 @@ const PlayButton = styled.button`
   height: 100px;
   margin: 24px 0;
 `;
-const SignUpButton = styled(Button)`
-  
-`;
+const SignUpButton = styled(Button)``;
 
 const Home = () => (
   <Layout>
@@ -72,7 +70,9 @@ const Home = () => (
         </Title>
         <Subtitle>Присутствуй в каждом моменте </Subtitle>
       </Text>
-      <SignUpButton variant="contained" size="large" color="primary">Записаться на пробное занятие</SignUpButton>
+      <SignUpButton variant="contained" size="large" color="primary">
+        Записаться на пробное занятие
+      </SignUpButton>
     </Base>
   </Layout>
 );

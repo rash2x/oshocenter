@@ -22,13 +22,12 @@ const Title = styled.h1`
 const Subtitle = styled.div`
   max-width: 480px;
   margin: 16px auto 40px;
-  
+
   font-style: italic;
   text-align: center;
 `;
 
 const subscriptions = [
-
   {
     title: 'Абонемент 3 месяца',
     price: '12000',
@@ -77,8 +76,8 @@ const Subscription = () => (
   <Layout>
     <Title>Стоимость и абонементы</Title>
     <Subtitle>
-      Абонементы действуют только на Ошо Медитации. <br/>
-      С ними вы можете посещать любое количество занятий в течении выбранного периода
+      Абонементы действуют только на Ошо Медитации. <br />С ними вы можете посещать любое количество
+      занятий в течении выбранного периода
     </Subtitle>
     <Base>
       {subscriptions.map(item => (
