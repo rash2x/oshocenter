@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import styled from 'styled-components';
 import GoogleMapReact from 'google-map-react';
@@ -101,47 +102,54 @@ const Location = () => {
     streetViewControl: false,
   };
   return (
-    <Layout>
-      <Base>
-        <Info>
-          <Text>Контактный телефон</Text>
-          <Number>+7 (812) 922-06-04</Number>
-          <Address>
-            <Text>Основной адрес</Text>
-            <City>191186, Санкт-Петербург</City>
-            <Street>Большая Конюшенная пл. 2В</Street>
-            <Metro>Метро Невский проспект</Metro>
-          </Address>
-          <Wrapper>
-            <LocationImg>
-              <Image src={City1} alt="Location" />
-            </LocationImg>
-            <LocationImg>
-              <Image src={City2} alt="Location" />
-            </LocationImg>
-            <LocationImg>
-              <Image src={City3} alt="Location" />
-            </LocationImg>
-            <LocationImg>
-              <Image src={City1} alt="Location" />
-            </LocationImg>
-            <LocationImg>
-              <Image src={City2} alt="Location" />
-            </LocationImg>
-            <LocationImg>
-              <Image src={City3} alt="Location" />
-            </LocationImg>
-          </Wrapper>
-        </Info>
-        <div style={{ height: '518px', width: '420px' }}>
-          <GoogleMapReact defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom} bootstrapURLKeys={{
-            key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"
-          }}>
-            <AnyReactComponent lat={59.9407315} lng={30.3226824} icon={MapIcon} />
-          </GoogleMapReact>
-        </div>
-      </Base>
-    </Layout>
+    <>
+      <Head>
+        <title>Location</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Layout>
+        <Base>
+          <Info>
+            <Text>Позвоните, если возникли вопросы как добраться</Text>
+            <Number>+7 (812) 922-06-04</Number>
+            <Address>
+              <Text>Основной адрес</Text>
+              <City>191186, Санкт-Петербург</City>
+              <Street>Большая Конюшенная пл. 2В</Street>
+              <Metro>Метро Невский проспект</Metro>
+            </Address>
+            <Wrapper>
+              <LocationImg>
+                <Image src={City1} alt="Location" />
+              </LocationImg>
+              <LocationImg>
+                <Image src={City2} alt="Location" />
+              </LocationImg>
+              <LocationImg>
+                <Image src={City3} alt="Location" />
+              </LocationImg>
+              <LocationImg>
+                <Image src={City1} alt="Location" />
+              </LocationImg>
+              <LocationImg>
+                <Image src={City2} alt="Location" />
+              </LocationImg>
+              <LocationImg>
+                <Image src={City3} alt="Location" />
+              </LocationImg>
+            </Wrapper>
+          </Info>
+          <div style={{ height: '518px', width: '420px' }}>
+            <GoogleMapReact defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom}>
+              <AnyReactComponent lat={59.9407315} lng={30.3226824} icon={MapIcon} />
+            </GoogleMapReact>
+          </div>
+          {/* <Map>
+          <Image src={MapImg} alt="Map" />
+        </Map> */}
+        </Base>
+      </Layout>
+    </>
   );
 };
 

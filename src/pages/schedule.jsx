@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import Layout from '../App/components/Layout';
 import ScheduleCard from '../App/components/ScheduleCard';
@@ -144,25 +145,31 @@ const events = [
 ];
 
 const Schedule = () => (
-  <Layout>
-    <Title>Расписание медитаций</Title>
-    <Subtitle>“Медитация с утра помогает начать отличный день”</Subtitle>
-    <ScheduleList>
-      {meditations.map(item => (
-        <ScheduleCard key={item.title} {...item} />
-      ))}
-    </ScheduleList>
-
-    <Events>
-      <Title>Ближайшие события</Title>
+  <>
+    <Head>
+      <title>Schedule</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <Layout>
+      <Title>Расписание медитаций</Title>
+      <Subtitle>“Медитация с утра помогает начать отличный день”</Subtitle>
       <ScheduleList>
         {events.map(item => (
           <ScheduleCard key={item.title} {...item} isEvent={true} />
         ))}
       </ScheduleList>
-    </Events>
-    <TryMeditation />
-  </Layout>
+
+      <Events>
+        <Title>Ближайшие события</Title>
+        <ScheduleList>
+          {events.map(item => (
+            <ScheduleCard key={item.title} {...item} />
+          ))}
+        </ScheduleList>
+      </Events>
+      <TryMeditation />
+    </Layout>
+  </>
 );
 
 export default Schedule;

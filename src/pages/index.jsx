@@ -1,8 +1,9 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 import Layout from '../App/components/Layout';
 import Play from '../../public/Play.svg';
-import Button from '@material-ui/core/Button';
 
 const Base = styled.div`
   display: flex;
@@ -63,20 +64,28 @@ const SignUpButton = styled(Button)`
 `;
 
 const Home = () => (
-  <Layout>
-    <Base>
-      <PlayButton>
-        <Image src={Play} alt="Play" />
-      </PlayButton>
-      <Text>
-        <Title>
-          <Philosopher>Активные </Philosopher> <Bold>Ошо </Bold> <ExtraBold>медитации</ExtraBold>
-        </Title>
-        <Subtitle>Присутствуй в каждом моменте </Subtitle>
-      </Text>
-      <SignUpButton variant="contained" size="large" color="primary">Записаться на пробное занятие</SignUpButton>
-    </Base>
-  </Layout>
+  <>
+    <Head>
+      <title>Welcome</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <Layout>
+      <Base>
+        <PlayButton>
+          <Image src={Play} alt="Play" />
+        </PlayButton>
+        <Text>
+          <Title>
+            <Philosopher>Активные </Philosopher> <Bold>Ошо </Bold> <ExtraBold>медитации</ExtraBold>
+          </Title>
+          <Subtitle>Присутствуй в каждом моменте </Subtitle>
+        </Text>
+        <SignUpButton variant="contained" size="large" color="primary">
+          Записаться на пробное занятие
+        </SignUpButton>
+      </Base>
+    </Layout>
+  </>
 );
 
 export default Home;

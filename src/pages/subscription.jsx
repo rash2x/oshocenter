@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import Layout from '../App/components/Layout';
 import SubscriptionCard from '../App/components/SubscriptionCard';
@@ -22,13 +23,12 @@ const Title = styled.h1`
 const Subtitle = styled.div`
   max-width: 480px;
   margin: 16px auto 40px;
-  
+
   font-style: italic;
   text-align: center;
 `;
 
 const subscriptions = [
-
   {
     title: 'Абонемент 3 месяца',
     price: '12000',
@@ -74,20 +74,26 @@ const subscriptions = [
 ];
 
 const Subscription = () => (
-  <Layout>
-    <Title>Стоимость и абонементы</Title>
-    <Subtitle>
-      Абонементы действуют только на Ошо Медитации. <br/>
-      С ними вы можете посещать любое количество занятий в течении выбранного периода
-    </Subtitle>
-    <Base>
-      {subscriptions.map(item => (
-        <SubscriptionCard key={item.title} {...item} />
-      ))}
-    </Base>
+  <>
+    <Head>
+      <title>Subscription</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <Layout>
+      <Title>Стоимость и абонементы</Title>
+      <Subtitle>
+        Абонементы действуют только на Ошо Медитации. <br />С ними вы можете посещать любое
+        количество занятий в течении выбранного периода
+      </Subtitle>
+      <Base>
+        {subscriptions.map(item => (
+          <SubscriptionCard key={item.title} {...item} />
+        ))}
+      </Base>
 
-    <TryMeditation />
-  </Layout>
+      <TryMeditation />
+    </Layout>
+  </>
 );
 
 export default Subscription;
