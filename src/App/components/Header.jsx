@@ -18,7 +18,11 @@ const HeaderWrapper = styled.header`
   font-size: 14px;
 `;
 
-const Nav = styled.nav``;
+const Nav = styled.nav`
+  @media (max-width: 425px) {
+    display: none;
+  }
+`;
 const Ul = styled.ul`
   display: flex;
   justify-content: space-evenly;
@@ -41,11 +45,11 @@ const ListItem = styled.li`
       color: #b388ff;
     }
   }
-  
+
   svg {
     margin-left: 4px;
   }
-  
+
   &:first-child {
     display: flex;
     align-items: center;
@@ -60,7 +64,7 @@ const Number = styled.div`
     font-weight: bold;
     transition: 0.3s all;
     padding: 8px;
-    
+
     font-size: 16px;
 
     &:hover {

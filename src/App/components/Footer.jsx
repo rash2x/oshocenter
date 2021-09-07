@@ -12,6 +12,12 @@ const FooterWrapper = styled.footer`
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
+
+  @media (max-width: 425px) {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 `;
 
 const Copyright = styled.div`
@@ -27,6 +33,15 @@ const About = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 9px;
+
+  @media (max-width: 425px) {
+    margin-top: 12px;
+  }
+  div {
+    @media (max-width: 425px) {
+      margin-top: 12px;
+    }
+  }
 `;
 
 const Contacts = styled.div`
@@ -59,6 +74,10 @@ const Address = styled.div`
       margin-right: ${props => props.theme.spacing(1)}px;
     }
   }
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 const Footer = () => (
@@ -67,8 +86,11 @@ const Footer = () => (
       <Copyright>&copy; 2021 Центр Ошо Медитаций</Copyright>
       <About>
         ОШО является зарегистрированной торговой маркой OSHO International Foundation, используемой
-        с разрешения Некоторые материалы, используемые здесь (изображения и выдержки из текста),
-        защищены авторским правом OSHO International Foundation
+        с разрешения
+        <div>
+          Некоторые материалы, используемые здесь (изображения и выдержки из текста), защищены
+          авторским правом OSHO International Foundation
+        </div>
       </About>
     </Info>
     <Contacts>

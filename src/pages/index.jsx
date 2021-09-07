@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import Layout from '../App/components/Layout';
-import Play from '../../public/Play.svg';
+import Play from '../../public/PlayBtn.svg';
 
 const Base = styled.div`
   display: flex;
@@ -21,13 +21,38 @@ const Title = styled.h1`
   display: flex;
   align-items: baseline;
   margin: 0;
+
+  div {
+    @media (max-width: 425px) {
+      font-size: 32px;
+      margin: 0;
+
+      &:first-child {
+        width: 100%;
+      }
+      &:nth-child(2) {
+        margin-right: 8px;
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    font-size: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
 `;
 
-const Subtitle = styled.h1`
+const Subtitle = styled.h2`
   margin-top: 0;
   font-style: italic;
   font-weight: 600;
   font-size: 32px;
+
+  @media (max-width: 425px) {
+    font-size: 16px;
+  }
 `;
 
 const Philosopher = styled.div`
@@ -52,8 +77,6 @@ const ExtraBold = styled.div`
 const PlayButton = styled.button`
   cursor: pointer;
   background: transparent;
-  opacity: 0.6;
-  border-radius: 50px;
   border: none;
   width: 100px;
   height: 100px;
@@ -61,6 +84,10 @@ const PlayButton = styled.button`
 `;
 const SignUpButton = styled(Button)`
   margin-top: 60px;
+
+  @media (max-width: 425px) {
+    display: none !important;
+  }
 `;
 
 const Home = () => (
