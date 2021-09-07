@@ -11,7 +11,7 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   color: ${props => props.theme.palette.text.primary};
-  padding: 16px 20px 16px 10px;
+  padding: 16px 20px 16px 20px;
 
   font-style: normal;
   font-weight: 600;
@@ -101,7 +101,7 @@ const Header = () => {
               <LinkItem href="/subscription">Стоимость </LinkItem>
             </ListItem>
             <ListItem>
-              <LinkItem href="/location">Как добраться? </LinkItem>
+              <LinkItem href="/location">Контакты</LinkItem>
             </ListItem>
           </Ul>
         </Nav>

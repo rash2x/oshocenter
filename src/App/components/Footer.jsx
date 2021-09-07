@@ -1,10 +1,6 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import Vk from '../../../public/vkIcon.svg';
-import Inst from '../../../public/InstIcon.svg';
-import Telegram from '../../../public/TelegamIcon.svg';
+import Socials from './Socials';
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -39,20 +35,6 @@ const Contacts = styled.div`
   align-items: flex-end;
   text-align: end;
 `;
-const Socials = styled.div`
-  display: flex;
-  margin-bottom: 16px;
-`;
-
-const Icon = styled(Image)``;
-const IconWrapper = styled.div`
-  margin-right: 24px;
-  cursor: pointer;
-
-  &:last-child {
-    margin: 0;
-  }
-`;
 
 const Address = styled.div`
   font-style: normal;
@@ -65,6 +47,7 @@ const Address = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
     &:before {
       content: '';
       width: 10px;
@@ -89,53 +72,7 @@ const Footer = () => (
       </About>
     </Info>
     <Contacts>
-      <Socials>
-        <IconWrapper>
-          <motion.div
-            whileHover={{ scale: 1.2, rotate: 360 }}
-            transition={{ ease: 'easeOut', duration: 0.5 }}
-            whileTap={{
-              scale: 0.8,
-              rotate: -360,
-              borderRadius: '100%',
-            }}
-          >
-            <Link href="/">
-              <Icon src={Vk} />
-            </Link>
-          </motion.div>
-        </IconWrapper>
-        <IconWrapper>
-          <motion.div
-            whileHover={{ scale: 1.2, rotate: 360 }}
-            transition={{ ease: 'easeOut', duration: 0.5 }}
-            whileTap={{
-              scale: 0.8,
-              rotate: -360,
-              borderRadius: '100%',
-            }}
-          >
-            <Link href="/">
-              <Icon src={Inst} />
-            </Link>
-          </motion.div>
-        </IconWrapper>
-        <IconWrapper>
-          <motion.div
-            whileHover={{ scale: 1.2, rotate: 360 }}
-            transition={{ ease: 'easeOut', duration: 0.5 }}
-            whileTap={{
-              scale: 0.8,
-              rotate: -360,
-              borderRadius: '100%',
-            }}
-          >
-            <Link href="/">
-              <Icon src={Telegram} />
-            </Link>
-          </motion.div>
-        </IconWrapper>
-      </Socials>
+      <Socials />
       <Address>
         Спб, Большая Конюшенная пл. 2В <span>Невский проспект</span>
       </Address>
