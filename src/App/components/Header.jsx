@@ -2,11 +2,11 @@ import React  from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Logo from './Logo';
-import { ExpandMoreRounded, MenuRounded } from '@material-ui/icons';
-import { Collapse, Drawer, IconButton, List, MenuItem, Menu } from '@material-ui/core';
+import { MenuRounded } from '@material-ui/icons';
+import { Drawer, IconButton, List } from '@material-ui/core';
 
 const HeaderWrapper = styled.header`
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(254, 249, 255, 0.65);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,6 +70,10 @@ const Number = styled.div`
     &:hover {
       color: #b388ff;
     }
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -98,14 +102,6 @@ const PhoneList = styled(List)`
   }
 `;
 
-const PhoneSubList = styled(PhoneList)`
-  li {
-    a {
-      padding-left: 32px;
-    }
-  }
-`;
-
 const PhoneLocation = styled.div`
   background: #F0E2F3;
   height: 32px;
@@ -123,9 +119,7 @@ const PhoneLocation = styled.div`
 `;
 
 const Header = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [phoneListOpen, setPhoneListOpen] = React.useState(false);
 
   const handleToggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -133,20 +127,6 @@ const Header = () => {
     }
 
     setDrawerOpen(open);
-  };
-
-  const handleClick = event => {
-    if (anchorEl !== event.currentTarget) {
-      setAnchorEl(event.currentTarget);
-    }
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handlePhoneListToggle = () => {
-    setPhoneListOpen(!phoneListOpen);
   };
 
   return (
@@ -160,15 +140,14 @@ const Header = () => {
         </LinkItem>
         <Nav>
           <Ul>
-            <ListItem onClick={handleClick} onMouseOver={handleClick}>
-              О медитациях
-              <ExpandMoreRounded fontSize={'small'} />
+            <ListItem>
+              <LinkItem href="/about">О медитациях</LinkItem>
             </ListItem>
             <ListItem>
-              <LinkItem href="/schedule">Расписание </LinkItem>
+              <LinkItem href="/schedule">Расписание</LinkItem>
             </ListItem>
             <ListItem>
-              <LinkItem href="/subscription">Стоимость </LinkItem>
+              <LinkItem href="/subscription">Стоимость</LinkItem>
             </ListItem>
             <ListItem>
               <LinkItem href="/location">Контакты</LinkItem>
@@ -182,46 +161,11 @@ const Header = () => {
           <MenuRounded />
         </MenuButton>
       </HeaderWrapper>
-      <Menu
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        MenuListProps={{ onMouseLeave: handleClose }}
-        getContentAnchorEl={null}
-      >
-        <MenuItem onClick={handleClose}>
-          <LinkItem href="/about" onClick={handleClose}>
-            О медитациях
-          </LinkItem>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <LinkItem href="/about" onClick={handleClose}>
-            О Центре
-          </LinkItem>
-        </MenuItem>
-      </Menu>
       <Drawer anchor={'top'} open={drawerOpen} onClose={handleToggleDrawer(false)}>
         <PhoneList component="nav" aria-label="main mailbox folders">
-          <ListItem onClick={handlePhoneListToggle}>
-            О медитациях
-            <ExpandMoreRounded fontSize={'small'} />
+          <ListItem>
+            <LinkItem href="/about">О медитациях</LinkItem>
           </ListItem>
-          <Collapse in={phoneListOpen} timeout="auto" unmountOnExit>
-            <PhoneSubList component="div" disablePadding>
-              <ListItem>
-                <LinkItem href="/about" onClick={handlePhoneListToggle}>
-                  О медитациях
-                </LinkItem>
-              </ListItem>
-              <ListItem>
-                <LinkItem href="/about" onClick={handlePhoneListToggle}>
-                  О Центре
-                </LinkItem>
-              </ListItem>
-            </PhoneSubList>
-          </Collapse>
           <ListItem>
             <LinkItem href="/schedule">Расписание</LinkItem>
           </ListItem>

@@ -15,6 +15,8 @@ const Base = styled.div`
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
+
+  position: relative;
 `;
 
 const Text = styled.div`
@@ -89,7 +91,7 @@ const SignUpButton = styled(Button)`
 const TrunkBackground = styled.div`
   z-index: -1;
   position: absolute;
-  top: -270px;
+  top: -450px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -102,10 +104,6 @@ const TrunkBackground = styled.div`
   justify-content: center;
   
   opacity: 0.35;
-
-  @media (max-width: 600px) {
-    top: -285px
-  }
 `;
 
 const Home = () => {
@@ -124,11 +122,12 @@ const Home = () => {
       minHeight: 200,
       maxWidth: 1000,
       maxHeight: 1000,
-      scaleMobile: 1.00,
+      scaleMobile: 10,
       color: 0x8600ff,
       backgroundColor: 0xFEF9FF,
-      spacing: 1.50,
-      chaos: 2.50,
+      spacing: 1,
+      chaos: 2,
+      speed: 0.2,
       p5: p5
     })
 
@@ -142,8 +141,8 @@ const Home = () => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Layout>
-      <TrunkBackground ref={elementRef} />
       <Base>
+        <TrunkBackground ref={elementRef} />
         <PlayButton>
           <Image src={Play} alt="Play" />
         </PlayButton>
