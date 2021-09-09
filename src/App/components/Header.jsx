@@ -6,6 +6,7 @@ import { ExpandMoreRounded, MenuRounded } from '@material-ui/icons';
 import { Collapse, Drawer, IconButton, List, MenuItem, Menu } from '@material-ui/core';
 
 const HeaderWrapper = styled.header`
+  background: rgba(255, 255, 255, 0.65);
   display: flex;
   justify-content: space-between;
   align-items: center;

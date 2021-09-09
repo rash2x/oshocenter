@@ -1,9 +1,13 @@
+import { useEffect, useRef } from 'react';
+import TRUNK from 'vanta/dist/vanta.trunk.min';
+
 import Head from 'next/head';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import Layout from '../App/components/Layout';
 import Play from '../../public/PlayBtn.svg';
+
 
 const Base = styled.div`
   display: flex;
@@ -82,13 +86,63 @@ const SignUpButton = styled(Button)`
   }
 `;
 
-const Home = () => (
-  <>
+const TrunkBackground = styled.div`
+  z-index: -1;
+  position: absolute;
+  top: -270px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  
+  width: 100%;
+  height: 1000px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  opacity: 0.35;
+
+  @media (max-width: 600px) {
+    top: -285px
+  }
+`;
+
+const Home = () => {
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const p5 = require('p5');
+
+    const trunkEffect = TRUNK({
+      el: elementRef.current,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      scale: 1,
+      minWidth: 200,
+      minHeight: 200,
+      maxWidth: 1000,
+      maxHeight: 1000,
+      scaleMobile: 1.00,
+      color: 0x8600ff,
+      backgroundColor: 0xFEF9FF,
+      spacing: 1.50,
+      chaos: 2.50,
+      p5: p5
+    })
+
+    return () => {
+      trunkEffect.destroy();
+    }
+  }, [elementRef]);
+  return <>
     <Head>
       <title>Центр Ошо Медитаций</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Layout>
+      <TrunkBackground ref={elementRef} />
       <Base>
         <PlayButton>
           <Image src={Play} alt="Play" />
@@ -103,6 +157,6 @@ const Home = () => (
       </Base>
     </Layout>
   </>
-);
+};
 
 export default Home;
