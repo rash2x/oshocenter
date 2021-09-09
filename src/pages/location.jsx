@@ -30,6 +30,7 @@ const Street = styled.div`
   margin-top: 8px;
   font-size: 24px;
   font-weight: 700;
+  text-align: center;
 `;
 const Metro = styled.div`
   margin-top: 8px;
