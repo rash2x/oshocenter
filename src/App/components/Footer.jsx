@@ -1,20 +1,19 @@
 import styled from 'styled-components';
-import Image from 'next/image';
 import Socials from './Socials';
 
 const FooterWrapper = styled.footer`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   color: ${props => props.theme.palette.text.primary};
-  padding: 22px 32px;
+  padding: 16px;
 
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
 
-  @media (max-width: 425px) {
-    display: flex;
+  @media (max-width: 960px) {
+    align-items: center;
     flex-direction: column-reverse;
     text-align: center;
   }
@@ -49,34 +48,9 @@ const Contacts = styled.div`
   flex-direction: column;
   align-items: flex-end;
   text-align: end;
-`;
 
-const Address = styled.div`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-
-  span {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    &:before {
-      content: '';
-      width: 10px;
-      height: 10px;
-      display: block;
-      background: #2196f3;
-      border: none;
-      border-radius: 50%;
-      margin-right: ${props => props.theme.spacing(1)}px;
-    }
-  }
-
-  @media (max-width: 425px) {
-    display: none;
+  @media (max-width: 600px) {
+    margin-bottom: 16px;
   }
 `;
 
@@ -95,9 +69,6 @@ const Footer = () => (
     </Info>
     <Contacts>
       <Socials />
-      <Address>
-        Спб, Большая Конюшенная пл. 2В <span>Невский проспект</span>
-      </Address>
     </Contacts>
   </FooterWrapper>
 );

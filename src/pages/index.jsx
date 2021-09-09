@@ -18,60 +18,47 @@ const Text = styled.div`
 `;
 
 const Title = styled.h1`
-  display: flex;
-  align-items: baseline;
   margin: 0;
+  font-weight: 600;
+  font-size: 56px;
+  font-style: italic;
+  letter-spacing: -2px;
+  
+  span {
+    font-family: Philosopher;
+    font-size: 60px;
+  }
 
-  div {
-    @media (max-width: 425px) {
-      font-size: 32px;
-      margin: 0;
-
-      &:first-child {
-        width: 100%;
-      }
-      &:nth-child(2) {
-        margin-right: 8px;
-      }
+  @media (max-width: 900px) {
+    font-size: 48px;
+    
+    span {
+      font-size: 52px;
     }
   }
-  @media (max-width: 425px) {
+  
+  @media (max-width: 600px) {
     font-size: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 16px;
+    
+    span {
+      font-size: 36px;
+    }
   }
 `;
 
 const Subtitle = styled.h2`
-  margin-top: 0;
+  margin-top: 8px;
   font-style: italic;
   font-weight: 600;
   font-size: 32px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 900px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 600px) {
     font-size: 16px;
   }
-`;
-
-const Philosopher = styled.div`
-  font-style: italic;
-  font-weight: 700;
-  font-size: 56px;
-  margin-right: 16px;
-`;
-const Bold = styled.div`
-  font-family: Philosopher;
-  font-style: italic;
-  font-weight: 800;
-  font-size: 52px;
-  margin-right: 16px;
-`;
-const ExtraBold = styled.div`
-  font-style: italic;
-  font-weight: 600;
-  font-size: 52px;
 `;
 
 const PlayButton = styled.button`
@@ -80,10 +67,19 @@ const PlayButton = styled.button`
   border: none;
   width: 100px;
   height: 100px;
-  margin: 24px 0;
+
+  margin-bottom: 32px;
+
+  @media (max-width: 600px) {
+    margin-bottom: 16px;
+  }
 `;
 const SignUpButton = styled(Button)`
-  margin-top: 60px;
+  margin-top: 56px;
+
+  @media (max-width: 600px) {
+    margin-top: 40px;
+  }
 `;
 
 const Home = () => (
@@ -98,10 +94,8 @@ const Home = () => (
           <Image src={Play} alt="Play" />
         </PlayButton>
         <Text>
-          <Title>
-            <Philosopher>Активные </Philosopher> <Bold>Ошо </Bold> <ExtraBold>медитации</ExtraBold>
-          </Title>
-          <Subtitle>Присутствуй в каждом моменте </Subtitle>
+          <Title><strong>Активные</strong> <span>Ошо</span> Медитации</Title>
+          <Subtitle>Присутствуй в каждом моменте</Subtitle>
         </Text>
         <SignUpButton variant="contained" size="large" color="primary">
           Записаться на пробное занятие

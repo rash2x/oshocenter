@@ -15,7 +15,6 @@ const IconWrapper = styled.div`
 
 const Base = styled.div`
   display: flex;
-  margin-bottom: 16px;
 
   img {
     width: 32px;

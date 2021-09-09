@@ -105,6 +105,22 @@ const PhoneSubList = styled(PhoneList)`
   }
 `;
 
+const PhoneLocation = styled.div`
+  background: #F0E2F3;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+
+  @media (max-width: 960px) {
+    font-size: 12px;
+  }
+`;
+
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -133,7 +149,10 @@ const Header = () => {
   };
 
   return (
-    <>
+    <header>
+      <PhoneLocation>
+        📍 Спб, Большая Конюшенная пл. 2В
+      </PhoneLocation>
       <HeaderWrapper>
         <LinkItem href="/">
           <Logo />
@@ -213,7 +232,7 @@ const Header = () => {
           </ListItem>
         </PhoneList>
       </Drawer>
-    </>
+    </header>
   );
 };
 
